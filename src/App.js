@@ -93,16 +93,16 @@ function SubDiv2({responseData, id }) {
 }
 function FetchedDataDiv({ searchText, setResponseData, responseData, setId }) {
   const [loading, setLoading] = useState(false);
+  const options = {
+    method: 'GET',
+    url: 'https://food-recipes-with-images.p.rapidapi.com/',
+    params: { q: searchText },
+    headers: {
+      'X-RapidAPI-Key': 'b67eb6a393msh22b6afd8e094928p194c99jsn24df14d6b73c',
+      'X-RapidAPI-Host': 'food-recipes-with-images.p.rapidapi.com'
+    }
+  };
   useEffect(() => {
-    const options = {
-      method: 'GET',
-      url: 'https://food-recipes-with-images.p.rapidapi.com/',
-      params: { q: searchText },
-      headers: {
-        'X-RapidAPI-Key': 'b67eb6a393msh22b6afd8e094928p194c99jsn24df14d6b73c',
-        'X-RapidAPI-Host': 'food-recipes-with-images.p.rapidapi.com'
-      }
-    };
     setLoading(true);
     axios
       .request(options)

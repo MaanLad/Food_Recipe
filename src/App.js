@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { motion, useInView, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 
 
@@ -54,13 +54,13 @@ function SearchBar({ searchText, setSearchText, setIsSearched }) {
     </div>
   );
 }
-function SubDiv2({ searchText, responseData, id }) {
+function SubDiv2({responseData, id }) {
   const obj = responseData.filter((element) => {
-    return element.id == id
+    return element.id === id
   })
   console.log(obj[0])
 
-  return !(id == 0) ? (
+  return !(id === '0') ? (
     <div id='subdiv2'>
       <div id='cardDetail'>
         <center><span style={{ fontFamily: "cursive", fontStyle: "italic", fontSize: "20px", fontWeight: "bold" }}>{obj[0].Title}</span></center>
@@ -93,17 +93,16 @@ function SubDiv2({ searchText, responseData, id }) {
 }
 function FetchedDataDiv({ searchText, setResponseData, responseData, setId }) {
   const [loading, setLoading] = useState(false);
-
-  const options = {
-    method: 'GET',
-    url: 'https://food-recipes-with-images.p.rapidapi.com/',
-    params: { q: searchText },
-    headers: {
-      'X-RapidAPI-Key': 'b67eb6a393msh22b6afd8e094928p194c99jsn24df14d6b73c',
-      'X-RapidAPI-Host': 'food-recipes-with-images.p.rapidapi.com'
-    }
-  };
   useEffect(() => {
+    const options = {
+      method: 'GET',
+      url: 'https://food-recipes-with-images.p.rapidapi.com/',
+      params: { q: searchText },
+      headers: {
+        'X-RapidAPI-Key': 'b67eb6a393msh22b6afd8e094928p194c99jsn24df14d6b73c',
+        'X-RapidAPI-Host': 'food-recipes-with-images.p.rapidapi.com'
+      }
+    };
     setLoading(true);
     axios
       .request(options)
@@ -132,7 +131,7 @@ function FetchedDataDiv({ searchText, setResponseData, responseData, setId }) {
             return (
               <div className='card' key={data.Id} onClick={() => { setId(data.id) }}>
                 <div className='imagediv'>
-                  <img src={data.Image} alt='image not loaded' />
+                  <img src={data.Image} alt='' />
                 </div>
                 <div className='cardpara'>
                   {data.Title}
@@ -173,7 +172,7 @@ function MainDiv() {
   return (
     <div id='maindiv'>
       <SubDiv1 searchText={searchText} responseData={responseData} setId={setId} setSearchText={setSearchText} setResponseData={setResponseData} />
-      <SubDiv2 searchText={searchText} responseData={responseData} id={id} />
+      <SubDiv2 responseData={responseData} id={id} />
     </div>
   );
 }

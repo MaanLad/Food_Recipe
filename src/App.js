@@ -30,8 +30,6 @@ function WebLogo() {
   </div>
   );
 }
-
-
 function SearchBar({ searchText, setSearchText, setIsSearched }) {
 
   function onSearchHandler() {
@@ -54,6 +52,8 @@ function SearchBar({ searchText, setSearchText, setIsSearched }) {
     </div>
   );
 }
+
+
 function SubDiv2({responseData, id }) {
   const obj = responseData.filter((element) => {
     return element.id === id
@@ -91,29 +91,29 @@ function SubDiv2({responseData, id }) {
 
 
 }
-function FetchedDataDiv({responseData, setId }) {
+
+
+function FetchedDataDiv({ setResponseData,responseData, setId ,searchText}) {
   const [loading, setLoading] = useState(false);
   
-  useEffect(({searchText,setResponseData}) => {
-    const options = {
-      method: 'GET',
-      url: 'https://food-recipes-with-images.p.rapidapi.com/',
-      params: { q: searchText },
-      headers: {
-        'X-RapidAPI-Key': 'b67eb6a393msh22b6afd8e094928p194c99jsn24df14d6b73c',
-        'X-RapidAPI-Host': 'food-recipes-with-images.p.rapidapi.com'
-      }
-    };
+  useEffect(() => {
     setLoading(true);
     axios
-      .request(options)
+      .request({
+        method: 'GET',
+        url: 'https://food-recipes-with-images.p.rapidapi.com/',
+        params: { q: searchText },
+        headers: {
+          'X-RapidAPI-Key': 'b67eb6a393msh22b6afd8e094928p194c99jsn24df14d6b73c',
+          'X-RapidAPI-Host': 'food-recipes-with-images.p.rapidapi.com'
+        }
+      })
       .then((response) => {
         setResponseData(response.data.d);
         setLoading(false);
         console.log(response.data)
       })
       .catch((error) => {
-        console.log(searchText)
         console.log(error)
       });
   }, []);

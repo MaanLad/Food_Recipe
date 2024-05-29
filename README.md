@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# HappyKitchen
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+HappyKitchen is a food recipe search app where users can enter a prompt with the recipe they want to make. The app provides suggestions based on the input, and users can get detailed instructions for making the selected recipe.
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+HappyKitchen aims to make cooking easier and more enjoyable by providing users with a convenient way to find and follow recipes. Users can search for recipes based on ingredients, cuisine, or specific dish names. Upon selecting a recipe from the suggestions, users receive step-by-step instructions to prepare the dish.
 
-### `npm start`
+## Key Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Search Functionality**: Users can search for recipes using keywords or specific ingredients.
+- **Recipe Suggestions**: The app provides a list of recipe suggestions based on the user's input.
+- **Detailed Instructions**: Users can view detailed cooking instructions for the selected recipe.
+- **User-Friendly Interface**: A clean and intuitive interface to enhance the user experience.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
+- React.js
+- RapidAPI (for fetching recipes)
 
-### `npm test`
+## Live Demo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Check out the live app hosted on Netlify: [HappyKitchen](https://maanlad-foodrecepie.netlify.app/)
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/MaanLad/Food_Recipe
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd happykitchen
+    ```
+3. Install the dependencies:
+    ```bash
+    cd src
+    npm install
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Once the server and client are both running, open your browser and navigate to `http://localhost:3000`. You can enter a recipe prompt in the search bar, browse through the suggestions, and click on a recipe to view detailed cooking instructions.
 
-### `npm run eject`
+## Contributing
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Contributions are welcome! Please follow these guidelines:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add some feature'`).
+5. Push to the branch (`git push origin feature-branch`).
+6. Create a new Pull Request.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Authors
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Maan Lad** - [MaanLad](https://github.com/MaanLad)
 
-## Learn More
+## Acknowledgments
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **RapidAPI** - For providing the food recipes API: [RapidAPI Food Recipes with Images](https://food-recipes-with-images.p.rapidapi.com/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Happy cooking with HappyKitchen! If you have any questions or feedback, feel free to reach out.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Meet you soon again with my new projects!
